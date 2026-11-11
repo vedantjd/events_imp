@@ -383,6 +383,21 @@
     #deviceGate .gate-note{font:700 12px/1.6 Consolas,monospace;color:#9956a9;
       margin-top:26px;padding-top:19px;border-top:1px solid #eedcf8;width:100%}
     @media(max-width:500px){#deviceGate{padding:38px 23px;min-height:360px;border-radius:24px}}
+
+    /* A final personal note, shown only once the gift mission is complete. */
+    .tai-call-note{margin-top:24px;padding:20px 22px;border-radius:20px;
+      background:linear-gradient(115deg,#ffffffed,#f5eafff0 65%,#e4f9fff0);
+      border:1px solid #ddbaf2;box-shadow:0 8px 22px #6833a915;
+      display:flex;gap:16px;align-items:flex-start}
+    .tai-call-icon{flex:0 0 48px;width:48px;height:48px;border-radius:15px;
+      display:grid;place-items:center;background:linear-gradient(145deg,#7a36d9,#b451d7);
+      color:white;font-size:22px;box-shadow:0 5px 14px #7634c944}
+    .tai-call-title{margin:2px 0 7px;color:#5b258a;font-size:17px;line-height:1.35;font-weight:900}
+    .tai-call-text{margin:0!important;color:#674087!important;font-size:15px!important;
+      line-height:1.6!important;font-weight:750!important}
+    .tai-call-sub{margin:8px 0 0!important;font-size:12px!important;
+      line-height:1.6!important;color:#91719e!important;font-weight:650!important}
+    @media(max-width:570px){.tai-call-note{padding:16px;gap:11px}.tai-call-icon{flex-basis:42px;width:42px;height:42px}}
   </style>
 </head>
 <body>
@@ -535,6 +550,14 @@
               <button type="button" class="alt" id="shareVictory">💬 Send on WhatsApp</button>
             </div>
             <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+            <div class="tai-call-note" aria-label="One last message from your little brother">
+              <div class="tai-call-icon" aria-hidden="true">☎</div>
+              <div>
+                <h5 class="tai-call-title">One last thing, Tai...</h5>
+                <p class="tai-call-text">Call me if you are free from your busy schedule. ❤️</p>
+                <p class="tai-call-sub">I'll still be a little angry, but I'll pick up. 😤🙂</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
