@@ -384,20 +384,51 @@
       margin-top:26px;padding-top:19px;border-top:1px solid #eedcf8;width:100%}
     @media(max-width:500px){#deviceGate{padding:38px 23px;min-height:360px;border-radius:24px}}
 
-    /* A final personal note, shown only once the gift mission is complete. */
-    .tai-call-note{margin-top:24px;padding:20px 22px;border-radius:20px;
-      background:linear-gradient(115deg,#ffffffed,#f5eafff0 65%,#e4f9fff0);
-      border:1px solid #ddbaf2;box-shadow:0 8px 22px #6833a915;
-      display:flex;gap:16px;align-items:flex-start}
-    .tai-call-icon{flex:0 0 48px;width:48px;height:48px;border-radius:15px;
-      display:grid;place-items:center;background:linear-gradient(145deg,#7a36d9,#b451d7);
-      color:white;font-size:22px;box-shadow:0 5px 14px #7634c944}
-    .tai-call-title{margin:2px 0 7px;color:#5b258a;font-size:17px;line-height:1.35;font-weight:900}
-    .tai-call-text{margin:0!important;color:#674087!important;font-size:15px!important;
-      line-height:1.6!important;font-weight:750!important}
-    .tai-call-sub{margin:8px 0 0!important;font-size:12px!important;
-      line-height:1.6!important;color:#91719e!important;font-weight:650!important}
-    @media(max-width:570px){.tai-call-note{padding:16px;gap:11px}.tai-call-icon{flex-basis:42px;width:42px;height:42px}}
+
+    /* Final card, revealed with the mystery coupon after the game is won. */
+    .tai-call-note{
+      position:relative; isolation:isolate; overflow:hidden; margin:28px auto 6px;
+      width:min(100%,650px); padding:0; display:block; text-align:left;
+      border:1px solid #f6cfef; border-radius:25px;
+      background:#fff9ff; box-shadow:0 20px 40px #7230ad28,0 4px 10px #6a369e10;
+      animation:taiCardShow .65s cubic-bezier(.2,.7,.15,1) both;
+    }
+    .tai-call-note:before{content:"";position:absolute;inset:0 0 auto 0;height:7px;
+      background:linear-gradient(90deg,#7630e3 0%,#dc55b3 42%,#ffab8b 74%,#43d9d1 100%)}
+    .tai-call-note:after{content:"✦";position:absolute;right:26px;bottom:14px;
+      font-size:68px;color:#dcb4f33d;z-index:-1;pointer-events:none}
+    .tai-call-top{display:flex;align-items:center;gap:12px;justify-content:space-between;
+      padding:22px 26px 16px;background:linear-gradient(115deg,#f9ecff,#fff3fc 55%,#e9faff)}
+    .tai-call-top-left{display:flex;gap:13px;align-items:center;min-width:0}
+    .tai-call-icon{flex:0 0 51px;width:51px;height:51px;border-radius:17px;
+      display:grid;place-items:center;background:linear-gradient(135deg,#6d2de0,#c653c3);
+      color:#fff;font-size:25px;box-shadow:0 7px 17px #8c46ca3d}
+    .tai-call-kicker{margin:0 0 4px;color:#8749bd;font:800 10px/1.25 Consolas,monospace;
+      letter-spacing:1.1px;text-transform:uppercase}
+    .tai-call-title{margin:0;color:#4c2382;font-size:19px;line-height:1.25;font-weight:900}
+    .tai-call-stamp{flex:0 0 auto;border:1px solid #dcbef1;border-radius:999px;
+      color:#823fae;background:#fffaff;padding:8px 12px;font:800 10px/1 Consolas,monospace;letter-spacing:.5px}
+    .tai-call-body{padding:24px 27px 23px;position:relative}
+    .tai-call-quote{font-family:Georgia,serif;color:#c38fdb;font-size:47px;line-height:.65;display:block;
+      margin-bottom:10px;user-select:none}
+    .tai-call-text{margin:0!important;color:#45246d!important;
+      font-size:clamp(19px,2.4vw,25px)!important;line-height:1.46!important;
+      font-weight:850!important;letter-spacing:-.5px}
+    .tai-call-sub{margin:13px 0 0!important;font-size:14px!important;
+      line-height:1.6!important;color:#85669e!important;font-weight:650!important}
+    .tai-call-footer{margin-top:24px;border-top:1px dashed #e5cdee;padding-top:15px;
+      display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
+    .tai-call-sign{font-size:13px;font-weight:850;color:#71439b}
+    .tai-call-tag{font:700 10px/1 Consolas,monospace;color:#a066b5;letter-spacing:.3px}
+    @keyframes taiCardShow{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+    @media(max-width:570px){
+      .tai-call-top{padding:20px 17px 15px;align-items:flex-start}
+      .tai-call-stamp{display:none}
+      .tai-call-icon{width:44px;height:44px;flex-basis:44px;font-size:21px;border-radius:14px}
+      .tai-call-body{padding:21px 19px 20px}
+      .tai-call-footer{gap:8px}
+    }
+    @media(prefers-reduced-motion:reduce){.tai-call-note{animation:none}}
   </style>
 </head>
 <body>
@@ -550,14 +581,27 @@
               <button type="button" class="alt" id="shareVictory">💬 Send on WhatsApp</button>
             </div>
             <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
-            <div class="tai-call-note" aria-label="One last message from your little brother">
-              <div class="tai-call-icon" aria-hidden="true">☎</div>
-              <div>
-                <h5 class="tai-call-title">One last thing, Tai...</h5>
+            <article class="tai-call-note" aria-label="A personal card from your little brother">
+              <header class="tai-call-top">
+                <div class="tai-call-top-left">
+                  <div class="tai-call-icon" aria-hidden="true">☎</div>
+                  <div>
+                    <p class="tai-call-kicker">A little card just for you</p>
+                    <h5 class="tai-call-title">One last thing, Tai...</h5>
+                  </div>
+                </div>
+                <span class="tai-call-stamp">PRIVATE NOTE ✦</span>
+              </header>
+              <div class="tai-call-body">
+                <span class="tai-call-quote" aria-hidden="true">“</span>
                 <p class="tai-call-text">Call me if you are free from your busy schedule. ❤️</p>
                 <p class="tai-call-sub">I'll still be a little angry, but I'll pick up. 😤🙂</p>
+                <div class="tai-call-footer">
+                  <span class="tai-call-sign">From your stubborn little brother 💜</span>
+                  <span class="tai-call-tag">OPERATION TAI // FINAL MESSAGE</span>
+                </div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
