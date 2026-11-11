@@ -428,6 +428,31 @@
       .tai-call-body{padding:21px 19px 20px}
       .tai-call-footer{gap:8px}
     }
+
+    /* Tai-OS: playful, premium-looking mood diagnostic to replace the giant heart artwork. */
+    .mood-console{position:relative;z-index:3;margin:26px 0 22px;border-radius:24px;
+      border:1px solid #ffffff82;background:linear-gradient(135deg,#ffffff30,#270e8560);
+      padding:18px;box-shadow:0 16px 30px #3c11793b,inset 0 1px 0 #ffffff33;backdrop-filter:blur(12px)}
+    .mood-console-header{display:flex;justify-content:space-between;align-items:center;gap:12px;
+      color:#fff1ff;font:800 11px/1.4 Consolas,monospace;letter-spacing:1.1px}
+    .mood-live{font-size:9px;color:#c4ffed;border:1px solid #a2ffe778;background:#ffffff1d;
+      padding:5px 8px;border-radius:999px;white-space:nowrap}
+    .mood-console-main{display:flex;align-items:center;gap:17px;padding:19px 1px 15px}
+    .mood-avatar{width:87px;height:87px;flex:0 0 87px;display:grid;place-items:center;
+      border-radius:24px;font-size:47px;background:linear-gradient(135deg,#fff7c6,#ffd4e9 55%,#c8f9ff);
+      box-shadow:0 8px 22px #330c704b,inset 0 2px 0 #ffffffc9;transform:rotate(-5deg)}
+    .mood-details{min-width:0;flex:1}
+    .mood-mode{font-size:clamp(19px,2.5vw,26px);line-height:1.12;font-weight:900;letter-spacing:-.6px;color:#fff4b2}
+    .mood-description{margin:7px 0 0;color:#fff6ff;line-height:1.55;font-size:13px;font-weight:650}
+    .mood-next{display:block;width:100%;border:1px solid #ffffffa1;border-radius:15px;cursor:pointer;
+      color:#4e2389;background:linear-gradient(110deg,#fff6cc,#fbd6f0,#d1faff);padding:12px 14px;
+      font:900 13px/1.3 'Trebuchet MS',sans-serif;box-shadow:0 6px 17px #330b7941;
+      transition:transform .18s ease,filter .18s ease}
+    .mood-next:hover{transform:translateY(-2px);filter:brightness(1.05)}
+    .mood-next:focus-visible{outline:3px solid #76f5ec;outline-offset:3px}
+    .mood-caption{font:700 10px/1.6 Consolas,monospace;letter-spacing:.35px;
+      color:#f7e7ff;text-align:center;margin-top:12px}
+
     @media(prefers-reduced-motion:reduce){.tai-call-note{animation:none}}
   </style>
 </head>
@@ -451,27 +476,32 @@
     <section class="intro screen" id="intro" aria-label="Unlock your surprise">
       <div class="visual">
         <div class="visual-content">
-          <span class="eyebrow"><span class="light"></span> ROOT ACCESS TO ONE VERY SPECIAL PERSON</span>
-          <h1>Hey,<br><em>Riddhi Tai!</em> 💗</h1>
-          <p class="visual-lead">Your little brother built you a tiny universe of code, colours, and feelings. Yes, he's still angry. No, that's not stopping him. 😤💖</p>
-          <div class="mini-code"><span>➜</span> sudo unlock --heart="riddhi_tai" <span>♡</span></div>
-          <div class="art" aria-hidden="true">
-            <div class="ring"></div><div class="orbit"></div>
-            <span class="float-em a">✨</span><span class="big-heart">💝</span><span class="float-em b">🔐</span><span class="float-em c">🌸</span>
+          <span class="eyebrow"><span class="light"></span> TAI-OS // ONE EXCEPTIONALLY MOODY VIP</span>
+          <h1>Hey,<br><em>Riddhi Tai!</em> 😏</h1>
+          <p class="visual-lead">Yes, Riddhi Tai, that's YOU. One minute sweet, next minute chidchidi, and when you're angry? Suddenly your replies go into silent mode. 😂</p>
+          <div class="mini-code"><span>➜</span> sudo scan --target="riddhi_tai" <span>✓</span></div>
+          <div class="mood-console" aria-label="Playful Riddhi Tai mood scanner">
+            <div class="mood-console-header"><span>◉ TAI-OS // MOOD SCANNER</span><span class="mood-live">● LIVE-ISH</span></div>
+            <div class="mood-console-main" aria-live="polite">
+              <div class="mood-avatar" id="moodFace" aria-hidden="true">😌</div>
+              <div class="mood-details"><div class="mood-mode" id="moodName">Sweet Tai mode</div><p class="mood-description" id="moodDescription">Friendly, funny, and almost suspiciously calm.</p></div>
+            </div>
+            <button type="button" class="mood-next" id="moodShuffle">↻ Check her mood again</button>
+            <div class="mood-caption">DISCLAIMER: Mood may change before this scan finishes.</div>
           </div>
           <div class="visual-footer">
             <div class="status-pill">🔗 Bond: <strong>College → Family</strong></div>
-            <div class="status-pill">🫶 Love: <strong>Always online</strong></div>
-            <div class="status-pill">😤 Anger: <strong>Still pending</strong></div>
+            <div class="status-pill">🌦️ Mood: <strong>Unpredictable</strong></div>
+            <div class="status-pill">🔕 Angry replies: <strong>1–2 words</strong></div>
           </div>
         </div>
       </div>
       <div class="auth">
         <div class="auth-icon" aria-hidden="true"><span>🔐</span></div>
-        <div class="section-label">✦ CLASSIFIED MEMORY CHALLENGE 01/01</div>
-        <h2>One little <span>memory test</span> before your surprise...</h2>
-        <p class="auth-copy">Taiii, do you actually remember the day we first met? Because apparently I'm supposed to trust your memory. 😏😂</p>
-        <div class="tease">💌 <strong>Hint:</strong> The date we first met, in <b>DDMMYYYY</b> format. Don't tell me you've already forgotten your most troublesome little brother!</div>
+        <div class="section-label">✦ TAI-OS IDENTITY VERIFICATION</div>
+        <h2>One little <span>memory test</span>, Miss Mood-Swing...</h2>
+        <p class="auth-copy">Tai, before you reply with your signature “hmm”... do you even remember the day we first met? Let's test that memory of yours. 😏</p>
+        <div class="tease">💌 <strong>Hint:</strong> The date we first met, in <b>DDMMYYYY</b> format. And no, “hmm” is not an acceptable answer. 😂</div>
         <form id="passwordForm" autocomplete="off">
           <label class="form-label" for="memoryPassword">Our secret first-meeting date</label>
           <input class="date-input" id="memoryPassword" type="text" inputmode="numeric" maxlength="10" placeholder="DDMMYYYY" spellcheck="false" aria-describedby="formatHint passwordFeedback" required />
@@ -479,7 +509,7 @@
           <button type="submit" class="cta" id="unlockBtn">Unlock my surprise <span aria-hidden="true">💌 ✨</span></button>
           <p class="feedback" id="passwordFeedback" role="status" aria-live="polite"></p>
         </form>
-        <div class="auth-note">100% handmade • 0% boring forwarded messages<br><span class="keyboard">No real hacking, only dangerously high levels of affection.</span></div>
+        <div class="auth-note">100% handmade • 0% generic forwards<br><span class="keyboard">Mood detection: questionable. Sibling bond: verified.</span></div>
       </div>
     </section>
 
@@ -487,50 +517,50 @@
       <div class="reveal-banner">
         <div class="check">✓ MEMORY VERIFIED • ACCESS GRANTED</div>
         <h2>Happy <span>Bhai Dooj</span>,<br>Riddhi Tai! 💗</h2>
-        <p>The password was correct. Now here's the message I actually wanted to send, even from far away. 🫶</p>
+        <p>Identity verified: Tai actually remembers important dates. 😏 Now here's your actual surprise.</p>
       </div>
       <div class="reveal-body">
         <article class="letter">
-          <div class="letter-heading">💗 // decrypted_message.txt</div>
+          <div class="letter-heading">✉ // to_my_chidchidi_tai.txt</div>
           <p class="first">Happy Bhai Dooj, Riddhi Tai! ❤️</p>
-          <p>I don't know if I ever said this properly, but I've always wanted to call you <strong>Riddhi Tai</strong>. So today I'm finally saying it. 🥹</p>
-          <p>We met because of college, but somewhere along the way you became someone I genuinely think of as my elder sister. We don't need to be siblings by blood for that.</p>
-          <p>I wanted to send you something for Bhai Dooj, but I don't even know your exact address 😅 So obviously, I ended up making something with code instead.</p>
-          <p>And haan, one small thing... I know I spoke a little roughly that day. I shouldn't have, sorry for that. But you thinking I was lying hurt me a little too, you know. 🥲</p>
-          <p>And just so we're clear, I'm still <strong>VERY angry</strong>, okay? 😤 Don't think this cute little website means I've already been convinced. I need some proper <strong>pampering from my Riddhi Tai, right now</strong>... otherwise I might just sit here and cry dramatically. 🥺😭😂 One little “arey baba, maan ja na” and some extra attention might help. <em>Might.</em> No guarantees. 😌❤️</p>
-          <p>But jokes apart, one silly argument doesn't change what you mean to me. I made this because I wanted you to smile today, not feel bad. ❤️</p>
-          <p>It's a small surprise, Tai, but I really hope it makes you smile. Stay happy, take care of yourself, and keep smiling always. ❤️</p>
-          <p>And haan, even if we're far away, you'll always be my <strong>Riddhi Tai</strong>. 🫂</p>
+          <p>Hey Tai! Yes, you. The same person who can go from sweet to <strong>full chidchidi mode</strong> without giving any warning. And when you're really angry, suddenly all I get is “hmm”, “okay”, or complete silence. Very advanced communication system, Tai. 😂</p>
+          <p>College gave me assignments, deadlines, and somehow <strong>an elder sister too</strong>. Somewhere between our random conversations and all the nonsense, you became my Riddhi Tai. No grand announcement needed. It just happened, and I'm really glad it did.</p>
+          <p>I wanted to give you something for Bhai Dooj, but I don't even know your exact address. So naturally, your slightly overdramatic hacker brother ended up making you an entire website instead. 😌</p>
+          <p>And haan, about that day... <strong>I'm sorry I spoke so roughly.</strong> I shouldn't have. I was hurt when you thought I was lying, and I didn't handle it well. I'm not bringing it up to make you feel bad. I just didn't want to leave that unsaid.</p>
+          <p>But don't get too confident. I'm <strong>still VERY angry</strong>. 😤 And before you activate your famous silent mode, I would like to officially request some <strong>proper manao-ing and pampering</strong>. One “arey baba, maan ja na”, a little extra attention, maybe a call. Please note that “hmm” does NOT count. 😂</p>
+          <p>All jokes apart, even on your moody days, your quiet days, or the days when we're both being stubborn, <strong>you're still my Riddhi Tai</strong>. One argument doesn't change that.</p>
+          <p>I made this to make you smile, not to make you feel guilty. Stay happy, take care, and try not to switch moods faster than I can debug a program. Happy Bhai Dooj, Tai. ❤️</p>
           <div class="foot"><span>From your little brother 💗</span><span>11.11.2026</span></div>
         </article>
         <aside class="aside">
           <div class="status-card">
-            <div class="aside-kicker">TAI VAULT // BOND STATUS</div>
-            <h3>Relationship status: securely connected 💞</h3>
-            <div class="status-row"><span>Our connection</span><strong>College → Family</strong></div>
-            <div class="status-row"><span>Distance</span><strong>Not a problem</strong></div>
-            <div class="status-row"><span>Affection</span><strong>∞ / ∞</strong></div>
-            <div class="status-row"><span>Current mood</span><strong>Still VERY angry 😤</strong></div>
+            <div class="aside-kicker">TAI-OS // SYSTEM DIAGNOSTICS</div>
+            <h3>Riddhi Tai OS: still connected ✓</h3>
+            <div class="status-row"><span>Nickname</span><strong>Riddhi Tai</strong></div>
+            <div class="status-row"><span>Mood forecast</span><strong>Changes without warning 🌦️</strong></div>
+            <div class="status-row"><span>Angry mode</span><strong>Silent / “hmm” 🔕</strong></div>
+            <div class="status-row"><span>Brother's status</span><strong>Still very angry 😤</strong></div>
+            <div class="status-row"><span>Bond</span><strong>College → Family ❤️</strong></div>
           </div>
           <div class="pamper-card">
             <div class="aside-kicker">🚨 critical alert • manual action required</div>
-            <h3>One angry little brother needs pampering. NOW. 🥺</h3>
-            <p>Tai, if you don't manao me properly, I might start dramatically crying in 3... 2... 1... 😭😂</p>
+            <h3>Tai, activate manao.exe. Now. 😤</h3>
+            <p>Your little brother is still very angry and dangerously close to dramatic crying. Please respond with something more than “hmm”. 🥺😂</p>
             <div class="anger-meter" aria-label="Anger meter full"><div class="anger-fill"></div></div>
-            <button type="button" id="manaoBtn" class="pamper-btn">Open Tai's pampering mission 💗</button>
+            <button type="button" id="manaoBtn" class="pamper-btn">View the anti-nakhre protocol 💗</button>
             <div class="pamper-result" id="manaoResult" role="status" aria-live="polite">
-              <strong>👩‍💻 Mission: Make Little Brother Smile</strong><br>
-              💗 1. Say “Arey baba, maan ja na!”<br>
-              🫂 2. Give one big virtual hug and extra attention.<br>
-              🥺 3. Pamper him a tiny bit more, because he is stubborn.<br><br>
-              <strong>Important:</strong> Mission opened, not completed. He's still genuinely upset, and button clicks don't count as convincing! 😤❤️
+              <strong>📋 Anti-Nakhre Protocol for Tai</strong><br>
+              😌 1. Say “Arey baba, maan ja na!” (Not just “hmm”.)<br>
+              🫂 2. Send a hug and a little extra attention.<br>
+              📞 3. Maybe call your very stubborn little brother.<br><br>
+              <strong>Status:</strong> Request submitted. Actual manao-ing still pending. 😤❤️
             </div>
           </div>
           <div class="fun-card">
-            <h3>🌈 Extra happiness.exe</h3>
-            <p>Deploy some cute pixels. No firewall rule needed.</p>
+            <h3>🌦️ Mood forecast // Tai edition</h3>
+            <p>Forecast: unpredictable. Silent spells possible. Bond remains perfectly stable.</p>
             <div class="fun-actions">
-              <button type="button" id="celebrateBtn">✨ Make it rain hearts!</button>
+              <button type="button" id="celebrateBtn">✨ Deploy good vibes</button>
               <button type="button" id="backBtn">↩ Lock the secret again</button>
             </div>
           </div>
@@ -542,31 +572,31 @@
           <div class="mission-topline">root@tai-vault:~/missions/operation-riddhi-tai</div>
           <div class="mission-head">
             <div>
-              <h3>🎮 Operation Riddhi Tai</h3>
-              <p class="mission-deck">One final mission before your gift. Restore the four lost memory packets. And yes Tai, this little challenge comes with an actual reward. 😏</p>
+              <h3>🎮 Operation: Recover Tai's Moods</h3>
+              <p class="mission-deck">Final challenge, Tai: recover four missing mood pairs. Solve the mini game and unlock your mystery gift. No silent-mode shortcuts allowed. 😏</p>
             </div>
-            <span class="mission-pill" id="missionProgress">0 / 4 PACKETS</span>
+            <span class="mission-pill" id="missionProgress">0 / 4 MOODS</span>
           </div>
           <div class="mission-board">
             <div class="mission-game">
-              <div class="game-stats"><span>🔐 MEMORY MATCH // LEVEL 01</span><span>Attempts: <b id="missionMoves">0</b></span></div>
+              <div class="game-stats"><span>🔐 MOOD MATCH // LEVEL 01</span><span>Attempts: <b id="missionMoves">0</b></span></div>
               <div class="memory-grid" id="memoryGrid" aria-label="Match the four pairs of emoji cards"></div>
-              <div class="mission-instructions" id="memoryHint" role="status" aria-live="polite">Tap two cards to find a pair. Find all four pairs to unlock your gift.</div>
+              <div class="mission-instructions" id="memoryHint" role="status" aria-live="polite">Flip two cards to find a matching mood. Four pairs unlock your gift.</div>
             </div>
             <div class="mission-info">
-              <div class="mission-info-kicker">ENCRYPTED REWARD // COUPON UNLOCK</div>
-              <h4>You've got a gift waiting, Tai. 🎁</h4>
-              <p>Find all four matching pairs to unlock your personal surprise gift coupon. Send the code to your brother in your usual chat to claim your gift. No notification service and no payment details needed.</p>
-              <div class="mission-reward is-locked" id="rewardPreview"><span>LOCKED GIFT PACKET</span><b>🎁 MYSTERY GIFT</b></div>
+              <div class="mission-info-kicker">TAI REWARD // COUPON UNLOCK</div>
+              <h4>Your mission, Miss Chidchidi. 🎁</h4>
+              <p>Match all four moods to reveal your special gift code. Send that code to your brother, and make him deliver the surprise. 😏</p>
+              <div class="mission-reward is-locked" id="rewardPreview"><span>LOCKED MYSTERY GIFT</span><b>🎁 MYSTERY GIFT</b></div>
               <button class="mission-reset" id="restartMission" type="button">↻ Restart the mini game</button>
             </div>
           </div>
           <div class="mission-complete" id="missionComplete" hidden aria-live="polite">
-            <div class="mission-topline" style="color:#8f47a0">✓ ALL MEMORY PACKETS RECOVERED</div>
-            <h4>Mission completed, Riddhi Tai! 🏆</h4>
+            <div class="mission-topline" style="color:#8f47a0">✓ ALL TAI MOODS RECOVERED</div>
+            <h4>Mission complete, Tai! 🏆</h4>
             <div class="gift-value">Your surprise gift is unlocked 🎁</div>
-            <p>Congrats! Your annoying little brother owes you a Bhai Dooj gift now. This is a promise, not an Amazon claim code. 😌❤️</p>
-            <p>Congratulations, Tai! You've officially defeated your little brother's tiny cybersecurity challenge. Unfortunately, he is still waiting for pampering. 😤💗</p>
+            <p>Looks like the most unpredictable mood system on earth has passed the test. Your gift is officially unlocked! 🎁</p>
+            <p>And yes, you can claim your gift. Your brother is still waiting for that little bit of pampering, though. 😤❤️</p>
             <div class="coupon-ticket" aria-label="Bhai Dooj surprise gift coupon">
               <div class="coupon-value"><small>BHAI DOOJ</small><strong>GIFT 🎁</strong></div>
               <div class="coupon-info">
@@ -575,7 +605,7 @@
                 <p>Personal gift coupon · Redeem with your brother</p>
               </div>
             </div>
-            <p class="coupon-help"><strong>How to claim:</strong> Send this coupon code to your brother on WhatsApp. Tell him, “Tai completed your mission. Now where is my gift, Mr Hacker? 😏🎁” He’ll send your surprise personally.</p>
+            <p class="coupon-help"><strong>How to claim:</strong> Send this code to your brother on WhatsApp and say, “Tai completed your mission. Now hand over my mystery gift, Mr Hacker! 😏🎁”</p>
             <div class="mission-actions">
               <button type="button" id="copyVictory">📋 Copy coupon + message</button>
               <button type="button" class="alt" id="shareVictory">💬 Send on WhatsApp</button>
@@ -586,18 +616,18 @@
                 <div class="tai-call-top-left">
                   <div class="tai-call-icon" aria-hidden="true">☎</div>
                   <div>
-                    <p class="tai-call-kicker">A little card just for you</p>
-                    <h5 class="tai-call-title">One last thing, Tai...</h5>
+                    <p class="tai-call-kicker">ONE LAST SYSTEM NOTIFICATION</p>
+                    <h5 class="tai-call-title">A note for Miss Silent Mode...</h5>
                   </div>
                 </div>
                 <span class="tai-call-stamp">PRIVATE NOTE ✦</span>
               </header>
               <div class="tai-call-body">
                 <span class="tai-call-quote" aria-hidden="true">“</span>
-                <p class="tai-call-text">Call me if you are free from your busy schedule. ❤️</p>
-                <p class="tai-call-sub">I'll still be a little angry, but I'll pick up. 😤🙂</p>
+                <p class="tai-call-text">Call me when you get a moment from that very busy schedule of yours, Riddhi Tai. ❤️</p>
+                <p class="tai-call-sub">Even if you're in silent mode, one call would be nice. I'm still angry, but I'll definitely pick up. 😤🙂</p>
                 <div class="tai-call-footer">
-                  <span class="tai-call-sign">From your stubborn little brother 💜</span>
+                  <span class="tai-call-sign">From your stubborn little brother, who still answers your calls 💜</span>
                   <span class="tai-call-tag">OPERATION TAI // FINAL MESSAGE</span>
                 </div>
               </div>
@@ -606,21 +636,38 @@
         </div>
       </section>
     </section>
-    <footer class="footer"><span>💖 Crafted with love, code, and excessive nakhre.</span><span>ACCESS: RIDDHI_TAI_ONLY // 💻 + 🫶</span></footer>
+    <footer class="footer"><span>💜 Crafted with code, sarcasm, and an unpredictable mood scanner.</span><span>ACCESS: RIDDHI_TAI_ONLY // 💻 + 🫶</span></footer>
   </main>
 
   <div id="scanOverlay" class="scan-overlay" hidden role="status" aria-live="polite">
-    <div class="scan-box"><span class="scan-icon">💝</span><h2>Decrypting feelings...</h2><p>Accessing: our_first_memory.date<br>Verifying: cutest_tai.exe 💗</p><div class="scanbar"><i></i></div></div>
+    <div class="scan-box"><span class="scan-icon">💝</span><h2>Loading Tai-OS...</h2><p>Accessing: our_first_memory.date<br>Verifying: tai_mood_check.exe ✓</p><div class="scanbar"><i></i></div></div>
   </div>
 
   <script>
+
+    // Light-hearted Tai-OS mood diagnostic. These are jokes, not real mood detection.
+    const taiMoods = [
+      {emoji:'😌', label:'Sweet Tai mode', detail:'Friendly, funny, and almost suspiciously calm.'},
+      {emoji:'😤', label:'Chidchidi mode', detail:'Patience: low. Sass: unlimited. Proceed with snacks.'},
+      {emoji:'🤐', label:'Silent mode activated', detail:'Replies reduced to “hmm”, “okay” and radio silence.'},
+      {emoji:'😂', label:'Masti mode', detail:'Laughing again. Please do not jinx the moment.'}
+    ];
+    let taiMoodIndex = 0;
+    document.getElementById('moodShuffle').addEventListener('click', () => {
+      taiMoodIndex = (taiMoodIndex + 1) % taiMoods.length;
+      const mood = taiMoods[taiMoodIndex];
+      document.getElementById('moodFace').textContent = mood.emoji;
+      document.getElementById('moodName').textContent = mood.label;
+      document.getElementById('moodDescription').textContent = mood.detail;
+    });
+
     const intro = document.getElementById('intro');
     const reveal = document.getElementById('reveal');
     const input = document.getElementById('memoryPassword');
     const feedback = document.getElementById('passwordFeedback');
     const overlay = document.getElementById('scanOverlay');
     const secret = '16092025'; // A playful client-side puzzle, not a security mechanism.
-    const emoji = ['💖','💗','💝','🫶','🌸','✨','🌟','💜','🩵','🎀'];
+    const emoji = ['✨','💜','🌟','🌦️','💌','🎁','🩵','😌'];
     let attempts=0, cooldown=false;
     function hearts(amount=40){
       if(cooldown) return;
@@ -654,9 +701,9 @@
         attempts++;
         input.setAttribute('aria-invalid','true');
         const replies=[
-          'Incorrect, Tai! 😤 Even my code remembers. Try again! 💗',
-          'Taiiii... was meeting your little brother really that forgettable? 😂💔',
-          'Memory check still failing. Do I need to submit a cute complaint ticket? 🥺💌'
+          'Wrong date, Tai! Even my code remembers this one. 😏',
+          'That is not the date, Tai. Silent mode is not an option here. 😂',
+          'Memory module needs a reboot. Try again, Miss Chidchidi. 😤'
         ];
         feedback.textContent=replies[(attempts-1)%replies.length];
         input.focus();
@@ -665,14 +712,14 @@
     input.addEventListener('input',()=>{feedback.textContent='';input.removeAttribute('aria-invalid')});
     document.getElementById('manaoBtn').addEventListener('click',()=>{
       document.getElementById('manaoResult').classList.add('show');
-      document.getElementById('manaoBtn').textContent='Mission unlocked! Now manao him IRL 😂';
+      document.getElementById('manaoBtn').textContent='Protocol opened. Now actually manao him 😂';
       hearts(20);
     });
     document.getElementById('celebrateBtn').addEventListener('click',()=>hearts(72));
     document.getElementById('backBtn').addEventListener('click',()=>{
       reveal.hidden=true;intro.hidden=false;input.value='';feedback.textContent='';input.removeAttribute('aria-invalid');
       document.getElementById('manaoResult').classList.remove('show');
-      document.getElementById('manaoBtn').textContent="Open Tai's pampering mission 💗";
+      document.getElementById('manaoBtn').textContent="View the anti-nakhre protocol 💗";
       attempts=0;window.scrollTo({top:0,behavior:'smooth'});
     });
 
@@ -683,7 +730,7 @@
     const missionMoves = document.getElementById('missionMoves');
     const missionHint = document.getElementById('memoryHint');
     const missionComplete = document.getElementById('missionComplete');
-    const cardSymbols = ['🔐', '💻', '🎁', '🫂'];
+    const cardSymbols = ['😤', '🤐', '💌', '🎁'];
     let openedTile = null;
     let boardLocked = false;
     let matches = 0;
@@ -710,8 +757,8 @@
       win = false;
       victoryCode = ''; finishedAt = '';
       missionMoves.textContent = '0';
-      missionProgress.textContent = '0 / 4 PACKETS';
-      missionHint.textContent = 'Tap two cards to find a pair. Find all four pairs to unlock your gift.';
+      missionProgress.textContent = '0 / 4 MOODS';
+      missionHint.textContent = 'Flip two cards to find a matching mood. Four pairs unlock your gift.';
       missionComplete.hidden = true;
       document.getElementById('rewardPreview').classList.add('is-locked');
       document.getElementById('copyStatus').textContent = '';
@@ -746,8 +793,8 @@
         first.setAttribute('aria-label', 'Matched ' + first.dataset.symbol);
         tile.setAttribute('aria-label', 'Matched ' + tile.dataset.symbol);
         matches++;
-        missionProgress.textContent = matches + ' / 4 PACKETS';
-        missionHint.textContent = matches === 4 ? 'All memory packets recovered! 🎉' : 'Packet recovered! Find the next matching pair. ✨';
+        missionProgress.textContent = matches + ' / 4 MOODS';
+        missionHint.textContent = matches === 4 ? 'All four moods recovered! Even Tai is impressed. 🎉' : 'Mood recovered! Find the next pair. ✨';
         if(matches === 4)finishMission();
       } else {
         boardLocked = true;
@@ -782,10 +829,10 @@
     }
 
     function couponMessage(){
-      return 'Riddhi Tai has completed Operation Riddhi Tai 🎮💗\n' +
+      return 'Riddhi Tai has completed Operation Tai! 🎮💜\n' +
         'My Bhai Dooj gift coupon: ' + victoryCode + '\n' +
         'Mission completed in ' + moves + ' attempts!\n' +
-        'Now release my surprise gift, Mr Hacker! 😏🎁';
+        'Mood: victorious. Now hand over my mystery gift, Mr Hacker! 😏🎁';
     }
 
     document.getElementById('restartMission').addEventListener('click',setupMemoryGame);
